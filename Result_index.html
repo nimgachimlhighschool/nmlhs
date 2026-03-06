@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Result Publish Website</title>
+<link rel="icon" href="C:\Users\arbin\OneDrive\Desktop\Online Result\logo_image\icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo-box">
+        <img src="C:\Users\arbin\OneDrive\Desktop\Online Result\logo_image\icon.png" alt="Logo">
+    </div>
+    <div class="title">
+        <h1>Online Result Publish Website</h1>
+        <p>Exam Result Portal</p>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="menu">
+    <h3>Menu</h3>
+    <a href="#" onclick="showAdmin()">Admin Login</a>
+    <a href="#" onclick="logout()">Back</a>
+</div>
+
+<!-- STUDENT RESULT CHECK -->
+<div class="card" id="studentSection">
+    <h2>Check Your Result</h2>
+    <input type="text" id="searchReg" placeholder="Registration Number">
+    <input type="text" id="searchMobile" placeholder="Mobile Number">
+    <button class="btn" onclick="searchResult()">View Result</button>
+    <div id="resultArea"></div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div class="card hidden" id="adminLogin">
+    <h2>Admin Login</h2>
+    <input type="text" id="adminMobile" placeholder="Mobile">
+    <input type="password" id="adminPass" placeholder="Password">
+    <label><input type="checkbox" id="captcha"> I am not a robot</label>
+    <button class="btn" onclick="adminLogin()">Login</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="card hidden" id="adminPanel">
+    <h2>Publish Result</h2>
+    <input type="text" id="examName" placeholder="Exam Name">
+    <input type="text" id="examYear" placeholder="Exam Year">
+    <input type="text" id="session" placeholder="Session">
+    <input type="file" id="excelFile" accept=".csv">
+    <small>CSV Format: name,registration,mobile,result</small>
+    <button class="btn" onclick="publish()">Publish Result</button>
+    <button class="btn logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<footer>
+    © <span id="year"></span> ONLINE RESULT PUBLISH WEBSITE.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
